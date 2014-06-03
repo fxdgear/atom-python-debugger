@@ -1,3 +1,3 @@
-# python-debugger package
+# atom-python-debugger package
 
-A short description of your package.
+Quick and Easy way to add Python Debugger statements

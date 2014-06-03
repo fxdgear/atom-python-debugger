@@ -1,11 +1,11 @@
 {
-  "name": "python-debugger",
+  "name": "atom-python-debugger",
   "main": "./lib/python-debugger",
   "version": "0.0.1",
   "private": false,
   "description": "Quickly and easily add ipdb statements",
   "activationEvents": ["python-debugger:toggle"],
-  "repository": "https://github.com/atom/python-debugger",
+  "repository": "https://github.com/fxdgear/atom-python-debugger",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
