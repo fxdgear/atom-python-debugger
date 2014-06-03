@@ -1,7 +1,7 @@
 {
   "name": "atom-python-debugger",
   "main": "./lib/python-debugger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "Quickly and easily add ipdb statements",
   "activationEvents": [
