@@ -20,10 +20,10 @@ class MyClass(object):
         pass
 
     def my_function(self, *args, **kwargs):
-        print date][time.datetime.now()
+        print date][time.datetime.now()  # ][ denotes cursor location
 ```
 
-][ denotes cursor location
+
 After pressing F7:
 
 ```python
