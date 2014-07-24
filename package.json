@@ -4,9 +4,7 @@
   "version": "0.0.2",
   "private": false,
   "description": "Quickly and easily add ipdb statements",
-  "activationEvents": [
-    "python-debugger:toggle"
-  ],
+  "activationEvents": [],
   "repository": "https://github.com/fxdgear/atom-python-debugger",
   "license": "MIT",
   "engines": {
