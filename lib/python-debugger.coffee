@@ -11,8 +11,11 @@ module.exports =
     IMPORT_STATEMENT = "import ipdb\n"
     editor = atom.workspace.activePaneItem
     cursors = editor.getCursors()
+    saved_positions = []
+
     for cursor in cursors
       cursor.moveToFirstCharacterOfLine()
+      saved_positions.push cursor.getBufferPosition()
 
     editor.insertText(
       "ipdb.set_trace()  ######### Break Point ###########\n",
@@ -41,6 +44,9 @@ module.exports =
       if not IMPORT_STATEMENT.startsWith line
         editor.moveCursorToBeginningOfLine()
         editor.insertText(IMPORT_STATEMENT)
+
+    for cursor, index in cursors
+      cursor.setBufferPosition(saved_positions[index])
 
   remove: ->
     editor = atom.workspace.activePaneItem
