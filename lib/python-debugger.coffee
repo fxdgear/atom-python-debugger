@@ -26,24 +26,25 @@ module.exports =
     )
 
     editor.moveCursorToTop()
+    insert_position = editor.getCursorBufferPosition()
     editor.moveCursorToBeginningOfLine()
     editor.selectToEndOfLine()
     line = editor.getSelectedText()
-    if not line.startsWith "from __future__"
-      console.log "First import is not from __future__"
-      if not IMPORT_STATEMENT.startsWith line
-        editor.moveCursorToBeginningOfLine()
-        editor.insertText(IMPORT_STATEMENT)
 
-    else
-      console.log "First import is from __future__"
+    # skip comments (and Python headers), "from __future__" imports and empty lines
+    while (line.startsWith "#") or (line.startsWith "from __future__") or (not line)
       editor.moveCursorToBeginningOfLine()
       editor.moveCursorDown()
       editor.selectToEndOfLine()
+      if line
+        insert_position = editor.getCursorBufferPosition()
       line = editor.getSelectedText()
-      if not IMPORT_STATEMENT.startsWith line
-        editor.moveCursorToBeginningOfLine()
-        editor.insertText(IMPORT_STATEMENT)
+
+    editor.setCursorBufferPosition(insert_position)
+
+    if not (IMPORT_STATEMENT.startsWith line)
+      editor.moveCursorToBeginningOfLine()
+      editor.insertText(IMPORT_STATEMENT)
 
     for cursor, index in cursors
       cursor.setBufferPosition(saved_positions[index])
