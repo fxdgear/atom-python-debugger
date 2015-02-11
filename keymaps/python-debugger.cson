@@ -7,7 +7,7 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'.workspace':
+'.atom-workspace':
   'ctrl-alt-o': 'python-debugger:toggle'
   'f7': 'python-debugger:insert'
   'shift-f7': 'python-debugger:remove'
