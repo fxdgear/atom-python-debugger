@@ -4,11 +4,13 @@
   "version": "0.1.1",
   "private": false,
   "description": "Quickly and easily add ipdb statements",
-  "activationEvents": [],
+  "activationCommands": [],
   "repository": "https://github.com/fxdgear/atom-python-debugger",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {}
+  "dependencies": {
+      "atom-space-pen-views": "^2.0.3"
+  }
 }

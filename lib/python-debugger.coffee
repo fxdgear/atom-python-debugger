@@ -27,13 +27,13 @@ module.exports =
 
     editor.moveCursorToTop()
     insert_position = editor.getCursorBufferPosition()
-    editor.moveCursorToBeginningOfLine()
+    editor.moveToBeginningOfLine()
     editor.selectToEndOfLine()
     line = editor.getSelectedText()
 
     # skip comments (and Python headers), "from __future__" imports and empty lines
     while (line.startsWith "#") or (line.startsWith "from __future__") or (not line)
-      editor.moveCursorToBeginningOfLine()
+      editor.moveToBeginningOfLine()
       editor.moveCursorDown()
       editor.selectToEndOfLine()
       if line
@@ -43,7 +43,7 @@ module.exports =
     editor.setCursorBufferPosition(insert_position)
 
     if not (IMPORT_STATEMENT.startsWith line)
-      editor.moveCursorToBeginningOfLine()
+      editor.moveToBeginningOfLine()
       editor.insertText(IMPORT_STATEMENT)
 
     for cursor, index in cursors
