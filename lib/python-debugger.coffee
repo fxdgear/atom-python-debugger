@@ -4,8 +4,8 @@ module.exports =
   pythonDebuggerView: null
 
   activate: ->
-    atom.workspaceView.command "python-debugger:insert", => @insert()
-    atom.workspaceView.command "python-debugger:remove", => @remove()
+    atom.commands.add 'atom-workspace', "python-debugger:insert", => @insert()
+    atom.commands.add 'atom-workspace', "python-debugger:remove", => @remove()
 
   insert: ->
     IMPORT_STATEMENT = "import ipdb\n"
