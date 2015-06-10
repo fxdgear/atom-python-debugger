@@ -9,7 +9,7 @@ module.exports =
 
   insert: ->
     IMPORT_STATEMENT = "import ipdb\n"
-    editor = atom.workspace.activePaneItem
+    editor = atom.workspace.getActivePaneItem()
     cursors = editor.getCursors()
     saved_positions = []
 
@@ -50,7 +50,7 @@ module.exports =
       cursor.setBufferPosition(saved_positions[index])
 
   remove: ->
-    editor = atom.workspace.activePaneItem
+    editor = atom.workspace.getActivePaneItem()
     console.log('removing all imports')
     matches = []
     editor.buffer.backwardsScan /ipdb/g, (match) -> matches.push(match)
