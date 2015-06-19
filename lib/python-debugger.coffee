@@ -25,7 +25,7 @@ module.exports =
       }
     )
 
-    editor.moveCursorToTop()
+    editor.moveToTop()
     insert_position = editor.getCursorBufferPosition()
     editor.moveToBeginningOfLine()
     editor.selectToEndOfLine()
