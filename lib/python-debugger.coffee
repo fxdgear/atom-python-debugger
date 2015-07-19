@@ -34,7 +34,7 @@ module.exports =
     # skip comments (and Python headers), "from __future__" imports and empty lines
     while (line.startsWith "#") or (line.startsWith "from __future__") or (not line)
       editor.moveToBeginningOfLine()
-      editor.moveCursorDown()
+      editor.moveDown()
       editor.selectToEndOfLine()
       if line
         insert_position = editor.getCursorBufferPosition()
